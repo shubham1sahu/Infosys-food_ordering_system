@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#ea8787">
+    <a class="navbar-brand mx-10" href="{% url 'index' %}">Foodies.in</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#demo">Url</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        {% if user.is_staff %}
+        <li class="nav-item">
+          {% comment %} <a class="nav-link" href="{% url 'admin/' %}">Admin Dashboard</a> {% endcomment %}
+        </li>
+        {% endif %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'order' %}">Place an Order!</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="offcanvas offcanvas-start" id="demo">
+    <div class="offcanvas-header">
+      <h1 class="offcanvas-title">MENU</h1>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      
+        <a class="nav-link" style="color: #fc8181" href="#">Profile</a>
+        <a class="nav-link" style="color: #fc8181" href="{% url 'login' %}">Login</a>
+        <a class="nav-link" style="color: #fc8181" href="{% url 'order' %}">Order</a>
+        <a class="nav-link" style="color: #fc8181" href="#">Payment</a>
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: #fc8181" href="#">Categories</a>
+        
+        <ul class="dropdown-menu">
+          <a class="nav-link " style="color: #fc8181" href="#">Desserts</a>
+          <a class="nav-link " style="color: #fc8181" href="#">Burgers</a>
+           <a class="nav-link " style="color: #fc8181" href="#">Pizza</a>
+           
+          
+        </ul>
+      </div>
+    </div>
